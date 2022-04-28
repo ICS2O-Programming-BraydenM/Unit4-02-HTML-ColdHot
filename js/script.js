@@ -6,26 +6,21 @@
 
 "use strict"
 
-// This function displays a statement to see whether or not you guessed the program's correct randomly generated number 
+// This function displays a statement to see if the inputted temperature is considered hot or cold in my opinion 
  
-function displayGreeting () {
-  // declare constants
-	const MIN = 1;
-  const MAX = 6;
-
-  let correct = Math.floor((Math.random()*MAX)+MIN);
+function onButtonClick () {
   
-	// get user input (number 1-6 from user)
-	let number = parseInt(document.getElementById('number').value)
+	// get user input (degrees in celsius)
+	let temperature = parseInt(document.getElementById('degrees').value)
 
   // if statements, if number is correct, display a message that tells them so, if number is incorrect, display a message that tells them so 
-	if (number == correct) {
-		let greeting = "You are right, that is the correct random number"
+	if (temperature >= 15) {
+		let greeting = "It is hot outside!"
     document.getElementById('greeting').innerHTML = greeting
 	}
 
   else {
-    let greeting = "Nope, wrong number. Try again."
+    let greeting = "it is cold outside."
     document.getElementById('greeting').innerHTML = greeting + " The correct Number is " + correct + "."
   }
 }
